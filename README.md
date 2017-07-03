@@ -5,6 +5,11 @@ Repository for excercise
 
 `npm install`
 
+
+## Buid
+
+`npm run build`
+
 ## Run locally
 
 `npm run local`
