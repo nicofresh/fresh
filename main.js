@@ -21,7 +21,7 @@ async function searchGithub(search) {
 function renderResults(results) {
     const resultElement = document.querySelector('#results')
     //TODO use handlebar
-    resultElement.innerHTML = JSON.stringify(results)
+    resultElement.innerHtml = JSON.stringify(results, true, '\t')
 }
 
 function indicateError() {
