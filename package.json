@@ -19,6 +19,8 @@
   "homepage": "https://github.com/nicofresh/fresh#readme",
   "devDependencies": {
     "browserify": "^14.4.0",
-    "local-web-server": "^1.2.8"
+    "local-web-server": "^1.2.8",
+    "moment": "^2.18.1",
+    "qs": "^6.5.0"
   }
 }
