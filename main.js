@@ -9,7 +9,7 @@ async function searchGithub(search) {
     const searchParameters = {
         q: 'Vue.js',
         sort: 'stars',
-        pushed: '>' + moment().subtract(10, 'days').format('YYYY-MM-DD'),
+        pushed: '>' + moment().subtract(1, 'week').format('YYYY-MM-DD'),
         order: 'desc'
     }
     const url = `${GITHUB_API}/search/repositories?${qs.stringify(searchParameters)}`
