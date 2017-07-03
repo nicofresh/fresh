@@ -2,6 +2,7 @@
 
 const qs = require('qs')
 const moment = require('moment')
+const hb = require('handlebars')
 
 const GITHUB_API = "https://api.github.com"
 
