@@ -1,3 +1,6 @@
+public/bin/*
+
+
 # Logs
 logs
 *.log
