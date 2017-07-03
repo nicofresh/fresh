@@ -1,0 +1,23 @@
+{
+  "name": "fresh",
+  "version": "1.0.0",
+  "description": "Repository for exercise",
+  "main": "index.js",
+  "scripts": {
+  	"local": "ws --directory public"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicofresh/fresh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicofresh/fresh/issues"
+  },
+  "homepage": "https://github.com/nicofresh/fresh#readme",
+  "devDependencies": {
+    "local-web-server": "^1.2.8"
+  }
+}
