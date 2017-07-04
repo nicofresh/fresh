@@ -2,9 +2,30 @@
 
 const qs = require('qs')
 const moment = require('moment')
-const templateStore = require('./templates/templateStore.js').templates
+const appContext = {
+	templateStore: require('./templates/templateStore.js').templates
+}
 
 const GITHUB_API = "https://api.github.com"
+
+class SearchResultModel {
+	constructor (data) {
+		console.log(data)
+		this.data = data
+	}
+}
+
+class SearchResultsView {
+	constructor (element, model, context) {
+		this.element = element
+		this.model = model
+		this.template = context.templateStore.searchResults
+	}
+
+	render() {
+		return this.element.innerHTML = this.template(this.model.data)
+	}
+}
 
 async function searchGithub(search) {
     const searchParameters = {
@@ -14,15 +35,8 @@ async function searchGithub(search) {
         order: 'desc'
     }
     const url = `${GITHUB_API}/search/repositories?${qs.stringify(searchParameters)}`
-    console.log(url)
     const response = await fetch(url)
-    return await response.json()
-}
-
-function renderResults(results) {
-	console.log(results)
-    const resultElement = document.querySelector('#results')
-	resultElement.innerHTML = templateStore.searchResults(results)
+    return new SearchResultModel(await response.json())
 }
 
 function indicateError() {
@@ -32,9 +46,13 @@ function indicateError() {
 async function runSearch() {
     try {
 
-        const searchResults = await searchGithub("Vue.js")
-        renderResults(searchResults)
-
+        const model = await searchGithub("Vue.js")
+		const view = new SearchResultsView(
+			document.querySelector('#results'),
+			model,
+			appContext
+		)
+		view.render()
     } catch(e) {
         console.error(e)
         indicateError()
