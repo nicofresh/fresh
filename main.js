@@ -2,7 +2,8 @@
 
 const qs = require('qs')
 const moment = require('moment')
-const hb = require('handlebars')
+//const templateStore = require('./templates/templateStore.js')
+const templateTest = require('./templates/search-results.hbs')
 
 const GITHUB_API = "https://api.github.com"
 
@@ -20,9 +21,12 @@ async function searchGithub(search) {
 }
 
 function renderResults(results) {
+	console.log(results)
     const resultElement = document.querySelector('#results')
     //TODO use handlebar
-    resultElement.value = JSON.stringify(results, true, '\t')
+    //resultElement.value = JSON.stringify(results, true, '\t')
+	//resultElement.innerHTML = templateStore.searchResults(results)
+	resultElement.innerHTML = templateTest(results)
 }
 
 function indicateError() {

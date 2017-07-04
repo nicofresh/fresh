@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "local": "ws --directory public",
-    "build": "browserify main.js -o public/bin/bundle.js"
+    "build": "browserify -t hbsfy main.js -o public/bin/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "browserify": "^14.4.0",
+    "hbsfy": "^2.7.0",
     "local-web-server": "^1.2.8"
   }
 }
