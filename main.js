@@ -10,7 +10,7 @@ async function searchGithub(search) {
     const searchParameters = {
         q: 'Vue.js',
         sort: 'stars',
-        pushed: '>' + moment().subtract(10, 'days').format('YYYY-MM-DD'),
+        pushed: '>' + moment().subtract(1, 'week').format('YYYY-MM-DD'),
         order: 'desc'
     }
     const url = `${GITHUB_API}/search/repositories?${qs.stringify(searchParameters)}`
@@ -22,7 +22,7 @@ async function searchGithub(search) {
 function renderResults(results) {
     const resultElement = document.querySelector('#results')
     //TODO use handlebar
-    resultElement.innerHTML = JSON.stringify(results)
+    resultElement.value = JSON.stringify(results, true, '\t')
 }
 
 function indicateError() {
