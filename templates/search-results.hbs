@@ -1,7 +1,21 @@
-<ul>
-	{{#each items}}
-	<li>
-		{{url}}
-	</li>
-	{{/each}}
-</ul>
+<div class="row">
+	<div class="col-xxs-12">
+		{{#each items}}
+			<div class="row">
+				<div class="col-xxs-12 col-s-2 text-center repo-image">
+					<div class="media repo-image">
+						<img src="{{owner.avatar_url}}"/>
+					</div>
+				</div>
+				<div class="col-xxs-12 col-s-10">
+					<dl class="dl-horizontal">
+						<dt>Url</dt>
+						<dd><a target="_blank" href="{{url}}">{{full_name}}</a></dd>
+						<dt>Stars</dt>
+						<dd>{{stargazers_count}}</dd>
+					</dl>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+</div>

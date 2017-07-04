@@ -22,7 +22,6 @@ async function searchGithub(search) {
 function renderResults(results) {
 	console.log(results)
     const resultElement = document.querySelector('#results')
-    //TODO use handlebar
 	resultElement.innerHTML = templateStore.searchResults(results)
 }
 

@@ -6,12 +6,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Nicolas Exercise</title>
 		<script src="bin/bundle.js"></script>
+		<link href="vendor/responsive.min.css" rel="stylesheet" />
+		<link href="css/custom.css" rel="stylesheet" />
 	</head>
 	<body>
-		<div>
-			<h1>Most popular Vue.js repositories in the last 10 days</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-xxs-12">
+					<h1>Most popular Vue.js repositories in the last week</h1>
+				</div>
+			</div>
 			<hr/>
-			<div id="results">
+			<div class="row">
+				<div class="col-xxs-12">
+					<div id="results"></div>
+				</div>
 			</div>
 		</div>
 	</body>
